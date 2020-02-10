@@ -26,7 +26,12 @@
     },
     "android": {
       "package": "com.joemado.onebus",
-      "versionCode": 1
+      "icon": "./assets/icon.png",
+      "versionCode": 26,
+      "adaptiveIcon": {
+        "backgroundColor": "#654ea3",
+        "foregroundImage": "./assets/bus-vector.png"
+      }
     }
   }
 }

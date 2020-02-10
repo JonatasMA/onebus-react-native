@@ -1,6 +1,31 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
+class DescriptionHours extends Component {
+    render() {
+        const styles = StyleSheet.create({
+            description: {
+                marginTop: 15,
+                fontSize: 18,
+            },
+            hours: {
+                fontSize: 22
+            }
+        });
+
+        return (
+        <>
+            <Text style={styles.description}>
+                {this.props.description}
+            </Text>
+            <Text style={styles.hours}>
+                {this.props.hours}
+            </Text>
+        </>
+        );
+    }
+}
+
 class ScheduleFrame extends Component {
     render() {
         const styles = StyleSheet.create({
@@ -16,13 +41,6 @@ class ScheduleFrame extends Component {
                 borderBottomWidth: 1,
                 paddingBottom: 15,
             },
-            description: {
-                marginTop: 15,
-                fontSize: 18,
-            },
-            hours: {
-                fontSize: 22
-            }
         });
 
         const type = this.props.type;
@@ -35,18 +53,8 @@ class ScheduleFrame extends Component {
                     {type}
                 </Text>
                 <View style={styles.box}>
-                    <Text style={styles.description}>
-                        {start.description}
-                    </Text>
-                    <Text style={styles.hours}>
-                        {start.hours}
-                    </Text>
-                    <Text style={styles.description}>
-                        {end.description}
-                    </Text>
-                    <Text style={styles.hours}>
-                        {end.hours}
-                    </Text>
+                    <DescriptionHours description={start.description} hours={start.hours} />
+                    {end ? <DescriptionHours description={end.description} hours={end.hours}/> : <></>}
                 </View>
             </View>
         );
