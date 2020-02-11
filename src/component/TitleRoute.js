@@ -26,13 +26,15 @@ class TitleRoute extends Component {
                     { cancelable: false }
                     );
             }
+        }
 
+        if (descriptions) {
             ToastAndroid.showWithGravityAndOffset(
                 'Clique no título para abrir as legendas.',
                 ToastAndroid.LONG,
                 ToastAndroid.BOTTOM,
+                0,
                 25,
-                50,
             );
         }
 
