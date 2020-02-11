@@ -30,7 +30,7 @@
       "versionCode": 26,
       "adaptiveIcon": {
         "backgroundColor": "#654ea3",
-        "foregroundImage": "./assets/bus-vector.png"
+        "foregroundImage": "./assets/busvector.png"
       }
     }
   }
