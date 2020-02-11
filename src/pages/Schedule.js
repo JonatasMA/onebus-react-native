@@ -1,28 +1,28 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, ToastAndroid } from 'react-native';
 
 import ScheduleFlatList from '../component/ScheduleFlatList'
+import TitleRoute from '../component/TitleRoute'
 
 function Schedule({ navigation }) {
     const schedule = navigation.getParam('lines');
 
+    ToastAndroid.showWithGravityAndOffset(
+        'Clique no título para abrir as legendas.',
+        ToastAndroid.LONG,
+        ToastAndroid.BOTTOM,
+        25,
+        50,
+    );
+
     return (
         <View>
-            <Text style={styles.route}>{schedule.route}</Text>
+            <TitleRoute route={schedule.route} descriptions={schedule.descriptions ? schedule.descriptions.join("\n\n") : null} />
             <ScheduleFlatList
                 data={schedule}
             />
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    route: {
-        margin: 10,
-        fontSize: 20,
-        alignContent: 'center',
-        textAlign: 'center'
-    }
-});
 
 export default Schedule;

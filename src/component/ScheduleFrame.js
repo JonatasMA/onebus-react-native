@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
+import Env from '../enviroments';
+
 class DescriptionHours extends Component {
     render() {
         const styles = StyleSheet.create({
@@ -32,7 +34,7 @@ class ScheduleFrame extends Component {
             box: {
                 marginHorizontal: 15,
                 marginBottom: 15,
-                backgroundColor: '#dedede'
+                backgroundColor: Env.secondaryColor
             },
             type: {
                 marginHorizontal: 15,

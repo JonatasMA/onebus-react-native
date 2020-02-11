@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 
-import Api from '../services/api';
+// import Api from '../services/api';
+import DataBase from '../services/database';
 import CustomFlatList from '../component/CustomFlatList'
 
 function Main({ navigation }) {
@@ -9,8 +10,8 @@ function Main({ navigation }) {
 
     useEffect(() => {
         async function getLines() {
-            const response = await Api.get('/lines.json');
-            setLines(response.data);
+            // const response = await Api.get('/lines.json');
+            setLines(DataBase.lines);
         }
 
         getLines();
@@ -20,7 +21,6 @@ function Main({ navigation }) {
         <View>
             <CustomFlatList
                 navigation={navigation}
-                lines={lines}
                 data={lines.map((line, index) => ({ key: line.route, id: index }))}
             />
         </View>

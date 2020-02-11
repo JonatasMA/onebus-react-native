@@ -11,7 +11,7 @@ class CustomFlatList extends Component {
                 data={lines}
                 renderItem={
                     ({ item }) => (
-                        <CustomText lines={this.props.lines} navigation={this.props.navigation} id={item.id} value={item.key}/>
+                        <CustomText navigation={this.props.navigation} id={item.id} value={item.key}/>
                     )
                 }
             />

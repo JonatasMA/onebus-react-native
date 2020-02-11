@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableHighlight } from 'react-native';
+import DataBase from '../services/database';
 
 class CustomText extends Component {
     render() {
@@ -14,8 +15,16 @@ class CustomText extends Component {
         });
 
         return (
-            <TouchableHighlight underlayColor='#ddd' style={styles.button} onPress={() => { this.props.navigation.navigate('Schedule', { id: this.props.id, lines: this.props.lines[this.props.id]}) }}>
-                <Text id={this.props.id} style={styles.item}>
+            <TouchableHighlight
+                underlayColor='#ddd'
+                style={styles.button}
+                onPress={
+                    () => {
+                        this.props.navigation.navigate('Schedule', { lines: DataBase.lines[this.props.id]})
+                    }
+                }
+            >
+                <Text style={styles.item}>
                     {this.props.value}
                 </Text>
             </TouchableHighlight>

@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './pages/Main';
 import Schedule from './pages/Schedule';
+import Env from './enviroments';
 
 const Routes = createAppContainer(
     createStackNavigator(
@@ -24,7 +25,7 @@ const Routes = createAppContainer(
             defaultNavigationOptions: {
                 headerTintColor: '#FFF',
                 headerStyle: {
-                    backgroundColor: '#654ea3'
+                    backgroundColor: Env.primaryColor
                 }
             },
             initialRouteName: 'Main',
