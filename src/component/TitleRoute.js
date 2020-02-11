@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Alert } from 'react-native';
+import { StyleSheet, ToastAndroid, Text, Alert } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 class TitleRoute extends Component {
@@ -24,8 +24,16 @@ class TitleRoute extends Component {
                         { text: 'OK'},
                     ],
                     { cancelable: false }
-                );
+                    );
             }
+
+            ToastAndroid.showWithGravityAndOffset(
+                'Clique no título para abrir as legendas.',
+                ToastAndroid.LONG,
+                ToastAndroid.BOTTOM,
+                25,
+                50,
+            );
         }
 
         return (
