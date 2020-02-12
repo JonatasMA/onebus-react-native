@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Alert } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 class TitleRoute extends Component {
