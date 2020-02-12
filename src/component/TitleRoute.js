@@ -13,24 +13,8 @@ class TitleRoute extends Component {
             }
         });
 
-        const descriptions = this.props.descriptions;
-
-        function showAlert() {
-            if (descriptions) {
-                Alert.alert(
-                    'Legendas',
-                    descriptions,
-                    [
-                        { text: 'OK'},
-                    ],
-                    { cancelable: false }
-                    );
-            }
-        }
-
         return (
             <TouchableHighlight
-                onPress={showAlert}
                 underlayColor=''
             >
                 <Text style={styles.route}>{this.props.route}</Text>
