@@ -20,7 +20,7 @@ class CustomText extends Component {
                 style={styles.button}
                 onPress={
                     () => {
-                        this.props.navigation.navigate('Schedule', { lines: DataBase.lines[this.props.id]})
+                        this.props.navigation.navigate('Schedule', { schedule: DataBase.lines[this.props.id]})
                     }
                 }
             >

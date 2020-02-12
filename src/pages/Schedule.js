@@ -4,20 +4,26 @@ import { View, ToastAndroid } from 'react-native';
 import ScheduleFlatList from '../component/ScheduleFlatList'
 import TitleRoute from '../component/TitleRoute'
 
-function Schedule({ navigation }) {
-    const schedule = navigation.getParam('lines');
+function Schedule({ route, navigation }) {
+    const { schedule } = route.params;
+    // navigation.setOptions({ title: 'Updated!' })
 
-    ToastAndroid.showWithGravityAndOffset(
-        'Clique no título para abrir as legendas.',
-        ToastAndroid.LONG,
-        ToastAndroid.BOTTOM,
-        25,
-        50,
-    );
+    if (schedule.descriptions) {
+        ToastAndroid.showWithGravityAndOffset(
+            'Clique no título para abrir as legendas.',
+            ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,
+            0,
+            25,
+        );
+    }
 
     return (
         <View>
-            <TitleRoute route={schedule.route} descriptions={schedule.descriptions ? schedule.descriptions.join("\n\n") : null} />
+            <TitleRoute
+                route={schedule.route}
+                descriptions={schedule.descriptions ? schedule.descriptions.join("\n\n") : null}
+            />
             <ScheduleFlatList
                 data={schedule}
             />

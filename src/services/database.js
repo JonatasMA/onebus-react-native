@@ -1268,7 +1268,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": "1️⃣ - Não vai ao Recanto Verde",
+            "descriptions": ["1️⃣ - Não vai ao Recanto Verde"],
             "neighborhoods": [
                 "São Francisco",
                 "Centro",

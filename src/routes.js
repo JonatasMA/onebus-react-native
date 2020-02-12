@@ -1,36 +1,38 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Main from './pages/Main';
 import Schedule from './pages/Schedule';
 import Env from './enviroments';
 
-const Routes = createAppContainer(
-    createStackNavigator(
-        {
-            Main: {
-                screen: Main,
-                navigationOptions: {
-                    title: "OneBus"
-                }
-            },
-            Schedule: {
-                screen: Schedule,
-                navigationOptions: {
-                    title: "OneBus"
-                }
-            },
-        },
-        {
-            defaultNavigationOptions: {
-                headerTintColor: '#FFF',
-                headerStyle: {
-                    backgroundColor: Env.primaryColor
-                }
-            },
-            initialRouteName: 'Main',
-        }
-    )
-);
+function Routes() {
+    const Stack = createStackNavigator();
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="Main"
+                headerMode="screen"
+                screenOptions={{
+                    headerTintColor: 'white',
+                    headerStyle: {
+                        backgroundColor: Env.primaryColor
+                    },
+                }}
+            >
+                <Stack.Screen
+                    name="Main"
+                    component={Main}
+                    options={{ title: 'OneBus' }}
+                />
+                <Stack.Screen
+                    name="Schedule"
+                    component={Schedule}
+                    options={{ title: 'OneBus' }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
 
 export default Routes;
