@@ -45,6 +45,8 @@ class CustomText extends Component {
             }
         }
 
+        const schedules = DataBase.lines[this.props.id].schedules[0];
+
         return (
             <TouchableHighlight
                 underlayColor='#ddd'
@@ -60,7 +62,7 @@ class CustomText extends Component {
                         {this.props.value}
                     </Text>
                     <Text style={styles.hour}>
-                        {getNextSchedule(DataBase.lines[this.props.id].schedules[0].start.hours)}
+                        {'↑ ' + getNextSchedule(schedules.start.hours)}{schedules.end ? ' | ↓ ' + getNextSchedule(schedules.end.hours):''}
                     </Text>
                 </View>
             </TouchableHighlight>
