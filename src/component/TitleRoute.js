@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Alert } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 class TitleRoute extends Component {
@@ -13,24 +13,8 @@ class TitleRoute extends Component {
             }
         });
 
-        const descriptions = this.props.descriptions;
-
-        function showAlert() {
-            if (descriptions) {
-                Alert.alert(
-                    'Legendas',
-                    descriptions,
-                    [
-                        { text: 'OK'},
-                    ],
-                    { cancelable: false }
-                    );
-            }
-        }
-
         return (
             <TouchableHighlight
-                onPress={showAlert}
                 underlayColor=''
             >
                 <Text style={styles.route}>{this.props.route}</Text>

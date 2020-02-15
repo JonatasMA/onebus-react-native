@@ -1,7 +1,7 @@
 const DataBase = {
     "lines": [
         {
-            "descriptions": ["1️⃣ - Extensão até a penitenciária (somente às quintas-feiras, sábados, domingos e feriados)"],
+            "descriptions": ["➊ - Extensão até a penitenciária (somente às quintas-feiras, sábados, domingos e feriados)"],
             "neighborhoods": [
                 "Marambaia",
                 "Centro",
@@ -15,12 +15,12 @@ const DataBase = {
                         "description": "Marambaia",
                         "hours": [
                             "05:40",
-                            "07:10ʿ¹ʾ",
-                            "09:30ʿ¹ʾ",
-                            "11:40ʿ¹ʾ",
+                            "07:10➊",
+                            "09:30➊",
+                            "11:40➊",
                             "13:20",
-                            "15:10ʿ¹ʾ",
-                            "17:10ʿ¹ʾ",
+                            "15:10➊",
+                            "17:10➊",
                             "18:50",
                             "20:40",
                             "22:10"
@@ -179,7 +179,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Extensão até a Unifaminas"],
+            "descriptions": ["➊ - Extensão até a Unifaminas"],
             "neighborhoods": [
                 "São Pedro",
                 "Centro",
@@ -218,7 +218,7 @@ const DataBase = {
                             "20:20",
                             "21:00",
                             "21:40",
-                            "22:20ʿ¹ʾ",
+                            "22:20➊",
                             "23:00"
                         ]
                     },
@@ -260,9 +260,9 @@ const DataBase = {
         },
         {
             "descriptions": [
-                "1️⃣ - Não vai ao Quinta das Flores",
-                "2️⃣ - Extensão até o Estadual (somente em dias úteis). Não vai ao Quinta das Flores",
-                "3️⃣ - Extensão até Barra Alegre"
+                "➊ - Não vai ao Quinta das Flores",
+                "➋ - Extensão até o Estadual (somente em dias úteis). Não vai ao Quinta das Flores",
+                "➌ - Extensão até Barra Alegre"
             ],
             "neighborhoods": [
                 "Centro",
@@ -278,8 +278,8 @@ const DataBase = {
                             "07:00",
                             "08:10",
                             "09:40",
-                            "11:00ʿ¹ʾ",
-                            "12:00ʿ²ʾ",
+                            "11:00➊",
+                            "12:00➋",
                             "13:20",
                             "15:00",
                             "16:00",
@@ -294,20 +294,20 @@ const DataBase = {
                     "start": {
                         "description": "Barra",
                         "hours": [
-                            "06:30ʿ³ʾ",
+                            "06:30➌",
                             "07:40",
                             "09:00",
-                            "10:20ʿ³ʾ",
+                            "10:20➌",
                             "11:30",
-                            "12:30ʿ³ʾ",
-                            "14:20ʿ³ʾ",
+                            "12:30➌",
+                            "14:20➌",
                             "15:30",
-                            "16:30ʿ³ʾ",
-                            "17:50ʿ³ʾ",
+                            "16:30➌",
+                            "17:50➌",
                             "19:00",
                             "20:20",
                             "21:30",
-                            "22:30ʿ³ʾ"
+                            "22:30➌"
                         ]
                     },
                     "type": "Horários diários"
@@ -348,7 +348,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Extensão até a Faminas (somente em dias úteis)"],
+            "descriptions": ["➊ - Extensão até a Faminas (somente em dias úteis)"],
             "neighborhoods": [
                 "Centro",
                 "Encoberta"
@@ -372,11 +372,11 @@ const DataBase = {
                             "15:00",
                             "16:00",
                             "17:00",
-                            "18:00ʿ¹ʾ",
+                            "18:00➊",
                             "19:00",
                             "20:00",
                             "21:00",
-                            "22:00ʿ¹ʾ",
+                            "22:00➊",
                             "23:00"
                         ]
                     },
@@ -386,8 +386,8 @@ const DataBase = {
         },
         {
             "descriptions": [
-                "1️⃣ - Extensão até a Faminas",
-                "2️⃣ - Saindo da garagem"
+                "➊ - Extensão até a Faminas",
+                "➋ - Saindo da garagem"
             ],
             "neighborhoods": [
                 "Gaspar",
@@ -409,7 +409,7 @@ const DataBase = {
                             "09:30",
                             "10:20",
                             "11:00",
-                            "11:40ʿ¹ʾ",
+                            "11:40➊",
                             "12:20",
                             "13:10",
                             "14:00",
@@ -424,8 +424,8 @@ const DataBase = {
                             "20:50",
                             "21:40",
                             "22:20",
-                            "23:00ʿ¹ʾ",
-                            "23:40ʿ²ʾ"
+                            "23:00➊",
+                            "23:40➋"
                         ]
                     },
                     "start": {
@@ -433,7 +433,7 @@ const DataBase = {
                         "hours": [
                             "05:50",
                             "06:20",
-                            "07:00ʿ¹ʾ",
+                            "07:00➊",
                             "07:50",
                             "08:40",
                             "09:30",
@@ -462,7 +462,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Extensão até a Unifaminas"],
+            "descriptions": ["➊ - Extensão até a Unifaminas"],
             "neighborhoods": [
                 "Inconfidência",
                 "Centro",
@@ -480,7 +480,7 @@ const DataBase = {
                             "06:00",
                             "06:30",
                             "07:00",
-                            "07:30ʿ¹ʾ",
+                            "07:30➊",
                             "08:10",
                             "08:50",
                             "09:30",
@@ -501,7 +501,7 @@ const DataBase = {
                             "20:00",
                             "21:00",
                             "22:00",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "start": {
@@ -510,7 +510,7 @@ const DataBase = {
                             "06:00",
                             "06:30",
                             "07:00",
-                            "07:30ʿ¹ʾ",
+                            "07:30➊",
                             "08:10",
                             "08:50",
                             "09:30",
@@ -531,7 +531,7 @@ const DataBase = {
                             "20:00",
                             "21:00",
                             "22:00",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "type": "Horários diários"
@@ -540,8 +540,8 @@ const DataBase = {
         },
         {
             "descriptions": [
-                "1️⃣ - Extensão ao Estadual (somente em dias úteis)",
-                "2️⃣ - Extensão até a Unifaminas (somente em dias úteis)"
+                "➊ - Extensão ao Estadual (somente em dias úteis)",
+                "➋ - Extensão até a Unifaminas (somente em dias úteis)"
             ],
             "neighborhoods": [
                 "João XXIII",
@@ -555,7 +555,7 @@ const DataBase = {
                         "description": "Centro",
                         "hours": [
                             "6:00",
-                            "06:30ʿ¹ʾ",
+                            "06:30➊",
                             "07:00",
                             "07:30",
                             "08:10",
@@ -588,7 +588,7 @@ const DataBase = {
                         "hours": [
                             "06:00",
                             "06:30",
-                            "07:00ʿ²ʾ",
+                            "07:00➋",
                             "07:30",
                             "08:10",
                             "09:00",
@@ -605,13 +605,13 @@ const DataBase = {
                             "16:00",
                             "16:40",
                             "17:20",
-                            "18:00ʿ²ʾ",
+                            "18:00➋",
                             "18:40",
                             "19:20",
                             "20:00",
                             "20:50",
                             "21:30",
-                            "22:10ʿ²ʾ",
+                            "22:10➋",
                             "23:00"
                         ]
                     },
@@ -704,7 +704,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Extensão até o Divisório"],
+            "descriptions": ["➊ - Extensão até o Divisório"],
             "neighborhoods": [
                 "Napoleão",
                 "Centro",
@@ -719,15 +719,15 @@ const DataBase = {
                     "end": {
                         "description": "São Cristovão",
                         "hours": [
-                            "06:20ʿ¹ʾ",
+                            "06:20➊",
                             "07:40",
                             "09:00",
-                            "10:20ʿ¹ʾ",
-                            "11:40ʿ¹ʾ",
-                            "13:00ʿ¹ʾ",
+                            "10:20➊",
+                            "11:40➊",
+                            "13:00➊",
                             "14:20",
                             "15:40",
-                            "17:00ʿ¹ʾ",
+                            "17:00➊",
                             "18:20",
                             "19:40",
                             "21:20",
@@ -737,15 +737,15 @@ const DataBase = {
                     "start": {
                         "description": "Napoleão",
                         "hours": [
-                            "06:20ʿ¹ʾ",
+                            "06:20➊",
                             "07:40",
                             "09:00",
-                            "10:20ʿ¹ʾ",
-                            "11:40ʿ¹ʾ",
-                            "13:00ʿ¹ʾ",
+                            "10:20➊",
+                            "11:40➊",
+                            "13:00➊",
                             "14:20",
                             "15:40",
-                            "17:00ʿ¹ʾ",
+                            "17:00➊",
                             "18:20",
                             "19:40",
                             "21:20",
@@ -758,37 +758,37 @@ const DataBase = {
                     "end": {
                         "description": "São Cristovão",
                         "hours": [
-                            "06:20ʿ¹ʾ",
+                            "06:20➊",
                             "07:40",
                             "09:00",
-                            "10:20ʿ¹ʾ",
-                            "11:40ʿ¹ʾ",
-                            "13:00ʿ¹ʾ",
+                            "10:20➊",
+                            "11:40➊",
+                            "13:00➊",
                             "14:20",
                             "15:40",
-                            "17:00ʿ¹ʾ",
-                            "18:20ʿ¹ʾ",
+                            "17:00➊",
+                            "18:20➊",
                             "19:40",
                             "21:20",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "start": {
                         "description": "Napoleão",
                         "hours": [
-                            "06:20ʿ¹ʾ",
+                            "06:20➊",
                             "07:40",
                             "09:00",
-                            "10:20ʿ¹ʾ",
-                            "11:40ʿ¹ʾ",
-                            "13:00ʿ¹ʾ",
+                            "10:20➊",
+                            "11:40➊",
+                            "13:00➊",
                             "14:20",
                             "15:40",
-                            "17:00ʿ¹ʾ",
-                            "18:20ʿ¹ʾ",
+                            "17:00➊",
+                            "18:20➊",
                             "19:40",
                             "21:20",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "type": "Dias úteis e sábados"
@@ -836,8 +836,8 @@ const DataBase = {
         },
         {
             "descriptions": [
-                "1️⃣ - Extensão até o Estadual",
-                "2️⃣ - Extensão até a Unifaminas"
+                "➊ - Extensão até o Estadual",
+                "➋ - Extensão até a Unifaminas"
             ],
             "neighborhoods": [
                 "Planalto",
@@ -863,7 +863,7 @@ const DataBase = {
                             "10:40",
                             "11:20",
                             "11:45",
-                            "12:00ʿ¹ʾ",
+                            "12:00➊",
                             "12:40",
                             "13:20",
                             "14:00",
@@ -887,15 +887,15 @@ const DataBase = {
                         "hours": [
                             "06:15",
                             "06:45",
-                            "07:00ʿ²ʾ",
-                            "07:15ʿ²ʾ",
+                            "07:00➋",
+                            "07:15➋",
                             "08:00",
                             "08:20",
                             "08:40",
                             "09:20",
                             "10:00",
                             "10:40",
-                            "11:00ʿ²ʾ",
+                            "11:00➋",
                             "11:20",
                             "12:00",
                             "12:40",
@@ -908,14 +908,14 @@ const DataBase = {
                             "16:40",
                             "17:00",
                             "17:20",
-                            "17:50ʿ²ʾ",
-                            "18:00ʿ²ʾ",
+                            "17:50➋",
+                            "18:00➋",
                             "18:40",
                             "19:20",
                             "20:00",
                             "20:40",
                             "21:20",
-                            "22:00ʿ²ʾ",
+                            "22:00➋",
                             "22:30",
                             "23:00"
                         ]
@@ -991,7 +991,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Extensão até a Unifaminas"],
+            "descriptions": ["➊ - Extensão até a Unifaminas"],
             "neighborhoods": [
                 "Centro",
                 "Barra",
@@ -1022,7 +1022,7 @@ const DataBase = {
                             "10:30",
                             "10:45",
                             "11:00",
-                            "11:15ʿ¹ʾ",
+                            "11:15➊",
                             "11:40",
                             "12:00",
                             "12:20",
@@ -1044,7 +1044,7 @@ const DataBase = {
                             "17:40",
                             "18:00",
                             "18:20",
-                            "18:40ʿ¹ʾ",
+                            "18:40➊",
                             "19:00",
                             "19:30",
                             "20:00",
@@ -1060,11 +1060,11 @@ const DataBase = {
                         "hours": [
                             "06:00",
                             "06:15",
-                            "06:30ʿ¹ʾ",
+                            "06:30➊",
                             "06:45",
                             "07:00",
                             "07:15",
-                            "07:30ʿ¹ʾ",
+                            "07:30➊",
                             "07:45",
                             "08:00",
                             "08:30",
@@ -1074,7 +1074,7 @@ const DataBase = {
                             "10:30",
                             "10:45",
                             "11:00",
-                            "11:15ʿ¹ʾ",
+                            "11:15➊",
                             "11:40",
                             "12:00",
                             "12:20",
@@ -1103,7 +1103,7 @@ const DataBase = {
                             "20:50",
                             "21:20",
                             "22:00",
-                            "22:30ʿ¹ʾ",
+                            "22:30➊",
                             "23:00",
                             "23:30"
                         ]
@@ -1268,7 +1268,7 @@ const DataBase = {
             ]
         },
         {
-            "descriptions": ["1️⃣ - Não vai ao Recanto Verde"],
+            "descriptions": ["➊ - Não vai ao Recanto Verde"],
             "neighborhoods": [
                 "São Francisco",
                 "Centro",
@@ -1298,7 +1298,7 @@ const DataBase = {
                             "20:00",
                             "21:00",
                             "22:00",
-                            "23:00ʿ¹ʾ"
+                            "23:00➊"
                         ]
                     },
                     "type": "Horários diários"
@@ -1319,7 +1319,7 @@ const DataBase = {
             "schedules": [
                 {
                     "end": {
-                        "description": "Marambaia",
+                        "description": "São Joaquim",
                         "hours": [
                             "06:30",
                             "07:40",
@@ -1336,7 +1336,7 @@ const DataBase = {
                         ]
                     },
                     "start": {
-                        "description": "São Joaquim",
+                        "description": "Marambaia",
                         "hours": [
                             "06:00",
                             "07:00",
@@ -1408,8 +1408,8 @@ const DataBase = {
         },
         {
             "descriptions": [
-                "1️⃣ - Extensão até a Faminas (somente em dias úteis)",
-                "2️⃣ - Extensão até o Via Park (somente aos sábados, domingos e feriados)"
+                "➊ - Extensão até a Faminas (somente em dias úteis)",
+                "➋ - Extensão até o Via Park (somente aos sábados, domingos e feriados)"
             ],
             "neighborhoods": [
                 "Santa Terezinha",
@@ -1426,10 +1426,10 @@ const DataBase = {
                         "hours": [
                             "06:00",
                             "06:30",
-                            "07:20ʿ¹ʾ",
-                            "08:00ʿ²ʾ",
-                            "08:50ʿ²ʾ",
-                            "09:40ʿ²ʾ",
+                            "07:20➊",
+                            "08:00➋",
+                            "08:50➋",
+                            "09:40➋",
                             "10:40",
                             "11:20",
                             "12:00",
@@ -1446,7 +1446,7 @@ const DataBase = {
                             "20:20",
                             "21:10",
                             "22:00",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "start": {
@@ -1461,20 +1461,20 @@ const DataBase = {
                             "10:40",
                             "11:20",
                             "12:00",
-                            "12:40ʿ²ʾ",
-                            "13:30ʿ²ʾ",
+                            "12:40➋",
+                            "13:30➋",
                             "14:10",
                             "15:00",
                             "15:50",
-                            "16:40ʿ²ʾ",
-                            "17:20ʿ²ʾ",
-                            "18:00ʿ²ʾ",
+                            "16:40➋",
+                            "17:20➋",
+                            "18:00➋",
                             "18:40",
                             "19:30",
                             "20:20",
                             "21:10",
                             "22:00",
-                            "22:30ʿ¹ʾ"
+                            "22:30➊"
                         ]
                     },
                     "type": "Horários diários"
