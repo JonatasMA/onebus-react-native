@@ -551,7 +551,7 @@ const DataBase = {
             "route": "João XXIII/Barra",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "Centro",
                         "hours": [
                             "6:00",
@@ -583,7 +583,7 @@ const DataBase = {
                             "23:00"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Barra",
                         "hours": [
                             "06:00",
@@ -618,7 +618,7 @@ const DataBase = {
                     "type": "Domingos e feriados"
                 },
                 {
-                    "end": {
+                    "start": {
                         "description": "Centro",
                         "hours": [
                             "06:30",
@@ -640,7 +640,7 @@ const DataBase = {
                             "22:30"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Barra",
                         "hours": [
                             "06:00",
@@ -675,7 +675,7 @@ const DataBase = {
             "route": "João XXIII(Alta)/Centro",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "João XXIII",
                         "hours": [
                             "07:10",
@@ -687,7 +687,7 @@ const DataBase = {
                             "19:10"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Centro",
                         "hours": [
                             "06:30",
@@ -847,7 +847,7 @@ const DataBase = {
             "route": "Planalto/Barra",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "Centro",
                         "hours": [
                             "06:15",
@@ -882,7 +882,7 @@ const DataBase = {
                             "22:45"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Barra",
                         "hours": [
                             "06:15",
@@ -923,7 +923,7 @@ const DataBase = {
                     "type": "Dias úteis"
                 },
                 {
-                    "end": {
+                    "start": {
                         "description": "Centro",
                         "hours": [
                             "06:15",
@@ -954,7 +954,7 @@ const DataBase = {
                             "22:30"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Barra",
                         "hours": [
                             "06:15",
@@ -1318,7 +1318,7 @@ const DataBase = {
             "route": "São Joaquim/Marambaia (Padre Tiago)",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "São Joaquim",
                         "hours": [
                             "06:30",
@@ -1335,7 +1335,7 @@ const DataBase = {
                             "21:50"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Marambaia",
                         "hours": [
                             "06:00",
@@ -1369,7 +1369,7 @@ const DataBase = {
             "route": "São Joaquim/Santo Antônio",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "São Joaquim",
                         "hours": [
                             "06:30",
@@ -1385,7 +1385,7 @@ const DataBase = {
                             "22:00"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Santo Antônio",
                         "hours": [
                             "06:00",
@@ -1421,7 +1421,7 @@ const DataBase = {
             "route": "São José/Santa Terezinha",
             "schedules": [
                 {
-                    "end": {
+                    "start": {
                         "description": "São José",
                         "hours": [
                             "06:00",
@@ -1449,7 +1449,7 @@ const DataBase = {
                             "22:30➊"
                         ]
                     },
-                    "start": {
+                    "end": {
                         "description": "Santa Terezinha",
                         "hours": [
                             "06:00",

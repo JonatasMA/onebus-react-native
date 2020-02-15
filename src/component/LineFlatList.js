@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import CustomText from './CustomText';
 
-class CustomFlatList extends Component {
+class LineFlatList extends Component {
     render() {
         const lines = this.props.data;
 
@@ -19,4 +19,4 @@ class CustomFlatList extends Component {
     }
 }
 
-export default CustomFlatList;
+export default LineFlatList;

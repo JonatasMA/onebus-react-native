@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 import ScheduleFrame from './ScheduleFrame';
 
-class CustomFlatList extends Component {
+class ScheduleFlatList extends Component {
     render() {
         const sche = this.props.data;
         const scheduleData = sche.schedules.map(
@@ -45,4 +45,4 @@ class CustomFlatList extends Component {
     }
 }
 
-export default CustomFlatList;
+export default ScheduleFlatList;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
 import DataBase from '../services/database';
 
-class CustomText extends Component {
+class LineText extends Component {
     render() {
         const styles = StyleSheet.create({
             line: {
@@ -67,4 +67,4 @@ class CustomText extends Component {
     }
 }
 
-export default CustomText;
+export default LineText;
