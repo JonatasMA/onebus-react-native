@@ -1,18 +1,49 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
 import DataBase from '../services/database';
+import Env from '../enviroments';
 
 class CustomText extends Component {
     render() {
         const styles = StyleSheet.create({
-            item: {
-                fontSize: 20,
+            line: {
+                fontSize: 16,
+            },
+            hour: {
+                fontSize: 14,
+                fontStyle: 'italic',
+                color: '#888'
             },
             button: {
-                padding: 10,
-                height: 50,
+                height: 64,
+            },
+            box: {
+                margin: 16,
             }
         });
+
+        const getNextSchedule = (schedules) => {
+            const now = new Date;
+            // const now = (new Date).getTime();
+            const parseTime = (text) => {
+                const textSplited = text.split(':');
+                const time = new Date;
+                time.setHours(textSplited[0]);
+                time.setMinutes(textSplited[1]);
+                return time;
+            }
+
+            for (const key in schedules) {
+                if (schedules.hasOwnProperty(key)) {
+                    const scheduleText = (schedules[key]).replace('➊', '').replace('➋', '').replace('➌', '');
+                    const schedule = parseTime(scheduleText);
+                    console.log(schedule > now, schedule, now);
+                    if (schedule > now) {
+                        return scheduleText;
+                    }
+                }
+            }
+        }
 
         return (
             <TouchableHighlight
@@ -24,9 +55,14 @@ class CustomText extends Component {
                     }
                 }
             >
-                <Text style={styles.item}>
-                    {this.props.value}
-                </Text>
+                <View style={styles.box}>
+                    <Text style={styles.line}>
+                        {this.props.value}
+                    </Text>
+                    <Text style={styles.hour}>
+                        {getNextSchedule(DataBase.lines[this.props.id].schedules[0].start.hours)}
+                    </Text>
+                </View>
             </TouchableHighlight>
         );
     }

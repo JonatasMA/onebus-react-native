@@ -7,11 +7,13 @@ class DescriptionHours extends Component {
     render() {
         const styles = StyleSheet.create({
             description: {
-                marginTop: 15,
+                marginTop: 16,
                 fontSize: 18,
+                fontStyle: 'italic'
             },
             hours: {
-                fontSize: 22
+                marginTop: 8,
+                fontSize: 18
             }
         });
 
@@ -32,16 +34,27 @@ class ScheduleFrame extends Component {
     render() {
         const styles = StyleSheet.create({
             box: {
-                marginHorizontal: 15,
-                marginBottom: 15,
+                marginHorizontal: 16,
+                marginBottom: 16,
                 backgroundColor: Env.secondaryColor
             },
+
+            boxFather: {
+                elevation: 1,
+                marginHorizontal: 16,
+                marginBottom: 16,
+                borderRadius: 4,
+                backgroundColor: Env.secondaryColor
+            },
+
             type: {
-                marginHorizontal: 15,
-                marginTop: 15,
+                marginHorizontal: 16,
+                marginTop: 16,
                 fontSize: 20,
                 borderBottomWidth: 1,
-                paddingBottom: 15,
+                borderColor: '#aeaeae',
+                paddingBottom: 16,
+                fontWeight: 'bold'
             },
         });
 
@@ -50,7 +63,7 @@ class ScheduleFrame extends Component {
         const end = this.props.end;
 
         return (
-            <View style={styles.box}>
+            <View style={styles.boxFather}>
                 <Text style={styles.type}>
                     {type}
                 </Text>
