@@ -1,5 +1,5 @@
-import React, { Component, useEffect, useState } from 'react';
-import { FlatList, Text, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { FlatList } from 'react-native';
 import CustomText from './CustomText';
 
 class CustomFlatList extends Component {

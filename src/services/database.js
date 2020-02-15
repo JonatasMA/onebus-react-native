@@ -268,7 +268,7 @@ const DataBase = {
                 "Centro",
                 "Barra"
             ],
-            "route": "Circular (Via Quita das Flores)",
+            "route": "Circular (Via Quinta das Flores)",
             "schedules": [
                 {
                     "end": {

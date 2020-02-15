@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
 import DataBase from '../services/database';
-import Env from '../enviroments';
 
 class CustomText extends Component {
     render() {
@@ -24,7 +23,6 @@ class CustomText extends Component {
 
         const getNextSchedule = (schedules) => {
             const now = new Date;
-            // const now = (new Date).getTime();
             const parseTime = (text) => {
                 const textSplited = text.split(':');
                 const time = new Date;
@@ -37,7 +35,6 @@ class CustomText extends Component {
                 if (schedules.hasOwnProperty(key)) {
                     const scheduleText = (schedules[key]).replace('➊', '').replace('➋', '').replace('➌', '');
                     const schedule = parseTime(scheduleText);
-                    console.log(schedule > now, schedule, now);
                     if (schedule > now) {
                         return scheduleText;
                     }
@@ -62,7 +59,7 @@ class CustomText extends Component {
                         {this.props.value}
                     </Text>
                     <Text style={styles.hour}>
-                        {'↑ ' + getNextSchedule(schedules.start.hours)}{schedules.end ? ' | ↓ ' + getNextSchedule(schedules.end.hours):''}
+                        {getNextSchedule(schedules.start.hours)}{schedules.end ? ' / ' + getNextSchedule(schedules.end.hours):''}
                     </Text>
                 </View>
             </TouchableHighlight>

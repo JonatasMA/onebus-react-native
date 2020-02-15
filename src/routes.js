@@ -16,7 +16,7 @@ function Routes() {
                 screenOptions={{
                     headerTintColor: 'white',
                     headerStyle: {
-                        backgroundColor: Env.primaryColor
+                        backgroundColor: Env.primary.base
                     },
                 }}
             >

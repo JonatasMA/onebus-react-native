@@ -25,20 +25,20 @@ function Schedule({ route, navigation }) {
         navigation.setOptions(
             {
                 headerRight: () => (
-                    <TouchableOpacity style={{paddingRight: 15}} onPress={showAlert}>
-                        <MaterialIcons name="help-outline" size={25} color="#FFF" />
+                    <TouchableOpacity style={{ paddingRight: 16 }} onPress={showAlert}>
+                        <MaterialIcons name="help-outline" size={24} color="#FFF" />
                     </TouchableOpacity>
                 )
             }
         );
 
-        ToastAndroid.showWithGravityAndOffset(
-            'Clique no título para abrir as legendas.',
-            ToastAndroid.LONG,
-            ToastAndroid.BOTTOM,
-            0,
-            25,
-        );
+        // ToastAndroid.showWithGravityAndOffset(
+        //     'Clique no título para abrir as legendas.',
+        //     ToastAndroid.LONG,
+        //     ToastAndroid.BOTTOM,
+        //     0,
+        //     25,
+        // );
     }
 
     return (

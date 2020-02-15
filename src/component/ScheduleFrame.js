@@ -36,7 +36,7 @@ class ScheduleFrame extends Component {
             box: {
                 marginHorizontal: 16,
                 marginBottom: 16,
-                backgroundColor: Env.secondaryColor
+                backgroundColor: Env.basic.base
             },
 
             boxFather: {
@@ -44,7 +44,7 @@ class ScheduleFrame extends Component {
                 marginHorizontal: 16,
                 marginBottom: 16,
                 borderRadius: 4,
-                backgroundColor: Env.secondaryColor
+                backgroundColor: Env.basic.base
             },
 
             type: {
@@ -52,7 +52,7 @@ class ScheduleFrame extends Component {
                 marginTop: 16,
                 fontSize: 20,
                 borderBottomWidth: 1,
-                borderColor: '#aeaeae',
+                borderColor: '#0000001e',
                 paddingBottom: 16,
                 fontWeight: 'bold'
             },
