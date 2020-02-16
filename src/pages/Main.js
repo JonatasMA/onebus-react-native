@@ -10,6 +10,7 @@ import Env from '../enviroments';
 
 function Main({ navigation }) {
     const [lines, setLines] = useState([]);
+    const [routes, setRoutes] = useState([]);
 
     useEffect(() => {
         async function getLines() {
@@ -19,11 +20,33 @@ function Main({ navigation }) {
 
         getLines();
 
+        setRoutes(lines.map((line, index) => ({ key: line.route, id: index })));
+
+        const filter = (value) => {
+            console.log(value);
+            const linesFiltered = lines.map((line)=>{
+                if (line.neighborhoods.indexOf(value) > -1) {
+                    return line;
+                }
+            });
+
+            console.log(linesFiltered.length);
+            if (linesFiltered.length === 0) {
+                setRoutes({ key: 'Não encontrado', id: 0 });
+            }
+            // setRoutes(linesFiltered.map((line, index) => ({ key: line.route, id: index })));
+            setRoutes(linesFiltered.map((line, index) => { console.log(line); return { key: line.route, id: index }}));
+        }
+
         navigation.setOptions(
             {
                 headerRight: () => (
                     <TouchableOpacity style={{ paddingRight: 16 }} onPress={()=>('')}>
-                        <TextInput style={{ color: Env.basic.text }} placeholder="Procurar"></TextInput>
+                        <TextInput
+                            style={{ color: Env.basic.text }}
+                            placeholder="Procurar"
+                            onChangeText={filter}
+                        />
                         {/* <MaterialIcons name="search" size={24} color="#FFF" /> */}
                     </TouchableOpacity>
                 )
@@ -31,11 +54,13 @@ function Main({ navigation }) {
         );
     }, []);
 
+    console.log(routes);
+
     return (
         <View>
             <LineFlatList
                 navigation={navigation}
-                data={lines.map((line, index) => ({ key: line.route, id: index }))}
+                data={routes}
             />
         </View>
     );

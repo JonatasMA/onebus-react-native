@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
-import CustomText from './CustomText';
+import LineText from './LineText';
 
 class LineFlatList extends Component {
     render() {
@@ -11,7 +11,7 @@ class LineFlatList extends Component {
                 data={lines}
                 renderItem={
                     ({ item }) => (
-                        <CustomText navigation={this.props.navigation} id={item.id} value={item.key}/>
+                        <LineText navigation={this.props.navigation} id={item.id} value={item.key}/>
                     )
                 }
             />

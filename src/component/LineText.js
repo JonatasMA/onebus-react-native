@@ -31,15 +31,21 @@ class LineText extends Component {
                 return time;
             }
 
+            const removeChars = (hour) => (
+                hour.replace('➊', '').replace('➋', '').replace('➌', '')
+            )
+
             for (const key in schedules) {
                 if (schedules.hasOwnProperty(key)) {
-                    const scheduleText = (schedules[key]).replace('➊', '').replace('➋', '').replace('➌', '');
+                    const scheduleText = removeChars(schedules[key]);
                     const schedule = parseTime(scheduleText);
                     if (schedule > now) {
                         return scheduleText;
                     }
                 }
             }
+
+            return removeChars(schedules[0]);
         }
 
         const schedules = DataBase.lines[this.props.id].schedules[0];
