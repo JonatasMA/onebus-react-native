@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { View, Text, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 // import Api from '../services/api';
@@ -20,10 +20,9 @@ function Main({ navigation }) {
 
         getLines();
 
-        setRoutes(lines.map((line, index) => ({ key: line.route, id: index })));
+        // setRoutes(lines.map((line, index) => ({ key: line.route, id: index })));
 
         const filter = (value) => {
-            console.log(value);
             const linesFiltered = lines.map((line)=>{
                 if (line.neighborhoods.indexOf(value) > -1) {
                     return line;
@@ -38,29 +37,38 @@ function Main({ navigation }) {
             setRoutes(linesFiltered.map((line, index) => { console.log(line); return { key: line.route, id: index }}));
         }
 
+        function showAlert() {
+            Alert.alert(
+                'Opa!',
+                "Ainda não está funcionando :P\n\nMas, vai ser possivel pesquisar por locais que são refêrencias",
+                [
+                    { text: 'OK' },
+                ],
+                { cancelable: false }
+            );
+        }
+
         navigation.setOptions(
             {
                 headerRight: () => (
-                    <TouchableOpacity style={{ paddingRight: 16 }} onPress={()=>('')}>
-                        <TextInput
-                            style={{ color: Env.basic.text }}
-                            placeholder="Procurar"
-                            onChangeText={filter}
-                        />
-                        {/* <MaterialIcons name="search" size={24} color="#FFF" /> */}
+                    <TouchableOpacity style={{ paddingRight: 16 }} onPress={showAlert}>
+                        <Text style={{ color: Env.basic.text }}>Procurar</Text>
                     </TouchableOpacity>
+                    // <TextInput
+                    //     style={{ color: Env.basic.text, paddingRight: 16 }}
+                    //     placeholder="Procurar"
+                    //     onChangeText={filter}
+                    // />
                 )
             }
         );
     }, []);
 
-    console.log(routes);
-
     return (
         <View>
             <LineFlatList
                 navigation={navigation}
-                data={routes}
+                data={lines.map((line, index) => ({ key: line.route, id: index }))}
             />
         </View>
     );
