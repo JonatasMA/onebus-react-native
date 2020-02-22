@@ -11,7 +11,8 @@ const Env = {
     },
     basic: {
         text: '#fff',
-        base: '#ece9f3',
+        base: '#fff',
+        baseColor: '#ece9f3',
     }
 };
 
