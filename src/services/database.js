@@ -507,7 +507,7 @@ const DataBase = {
                 "Barra",
                 "Centro"
             ],
-            "route": "Dornelas II / Panorama",
+            "route": "Dornelas II/Panorama",
             "schedules": [
                 {
                     "start": {
