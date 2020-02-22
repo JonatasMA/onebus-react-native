@@ -10,7 +10,8 @@ function LineText() {
     useEffect(() => {
         const getNextSchedule = (schedules) => {
             const now = new Date;
-            const parseTime = (text) => {
+
+            function parseTime(text) {
                 const textSplited = text.split(':');
                 const time = new Date;
                 time.setHours(textSplited[0]);
@@ -18,9 +19,9 @@ function LineText() {
                 return time;
             }
 
-            const removeChars = (hour) => (
-                hour.replace('➊', '').replace('➋', '').replace('➌', '')
-            )
+            function removeChars(hour) {
+                return hour.replace('➊', '').replace('➋', '').replace('➌', '');
+            }
 
             for (const key in schedules) {
                 if (schedules.hasOwnProperty(key)) {
@@ -41,7 +42,7 @@ function LineText() {
         );
     }, [minutes])
 
-    setInterval(() => { setMinutes((new Date()).getMinutes())}, 30000)
+    setInterval(() => { setMinutes((new Date()).getMinutes()) }, 10000)
 
     const styles = StyleSheet.create({
         line: {
