@@ -1,26 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
 import DataBase from '../services/database';
 
-class LineText extends Component {
-    render() {
-        const styles = StyleSheet.create({
-            line: {
-                fontSize: 16,
-            },
-            hour: {
-                fontSize: 14,
-                fontStyle: 'italic',
-                color: '#888'
-            },
-            button: {
-                height: 64,
-            },
-            box: {
-                margin: 16,
-            }
-        });
+function LineText() {
+    const [props] = useState(arguments[0]);
+    const [hours, setHours] = useState("");
+    const [minutes, setMinutes] = useState(0);
 
+    useEffect(() => {
+        console.log(minutes);
         const getNextSchedule = (schedules) => {
             const now = new Date;
             const parseTime = (text) => {
@@ -48,29 +36,51 @@ class LineText extends Component {
             return removeChars(schedules[0]);
         }
 
-        const schedules = DataBase.lines[this.props.id].schedules[0];
-
-        return (
-            <TouchableHighlight
-                underlayColor='#ddd'
-                style={styles.button}
-                onPress={
-                    () => {
-                        this.props.navigation.navigate('Schedule', { schedule: DataBase.lines[this.props.id]})
-                    }
-                }
-            >
-                <View style={styles.box}>
-                    <Text style={styles.line}>
-                        {this.props.value}
-                    </Text>
-                    <Text style={styles.hour}>
-                        {getNextSchedule(schedules.start.hours)}{schedules.end ? ' / ' + getNextSchedule(schedules.end.hours):''}
-                    </Text>
-                </View>
-            </TouchableHighlight>
+        const schedules = DataBase.lines[props.id].schedules[0];
+        setHours(
+            getNextSchedule(schedules.start.hours) + (schedules.end ? ' / ' + getNextSchedule(schedules.end.hours) : '')
         );
-    }
+    }, [minutes])
+
+    setInterval(() => { setMinutes((new Date()).getMinutes())}, 30000)
+
+    const styles = StyleSheet.create({
+        line: {
+            fontSize: 16,
+        },
+        hour: {
+            fontSize: 14,
+            fontStyle: 'italic',
+            color: '#888'
+        },
+        button: {
+            height: 64,
+        },
+        box: {
+            margin: 16,
+        }
+    });
+
+    return (
+        <TouchableHighlight
+            underlayColor='#ddd'
+            style={styles.button}
+            onPress={
+                () => {
+                    props.navigation.navigate('Schedule', { schedule: DataBase.lines[props.id] })
+                }
+            }
+        >
+            <View style={styles.box}>
+                <Text style={styles.line}>
+                    {props.value}
+                </Text>
+                <Text style={styles.hour}>
+                    {hours}
+                </Text>
+            </View>
+        </TouchableHighlight>
+    );
 }
 
 export default LineText;

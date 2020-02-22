@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput, FlatList } from 'react-native-gesture-handler';
 
-import LineFlatList from '../component/LineFlatList'
+import LineText from '../component/LineText'
 import DataBase from '../services/database';
 import Env from '../enviroments';
 
@@ -51,9 +51,13 @@ function Main({ navigation }) {
 
     return (
         <View>
-            <LineFlatList
-                navigation={navigation}
+            <FlatList
                 data={routes}
+                renderItem={
+                    ({ item }) => (
+                        <LineText navigation={navigation} id={item.id} value={item.key} />
+                    )
+                }
             />
         </View>
     );
