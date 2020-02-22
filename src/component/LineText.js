@@ -8,7 +8,6 @@ function LineText() {
     const [minutes, setMinutes] = useState(0);
 
     useEffect(() => {
-        console.log(minutes);
         const getNextSchedule = (schedules) => {
             const now = new Date;
             const parseTime = (text) => {
