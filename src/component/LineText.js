@@ -20,7 +20,7 @@ function LineText() {
             }
 
             function removeChars(hour) {
-                return hour.replace('➊', '').replace('➋', '').replace('➌', '');
+                return hour.replace('*', '').replace('#', '');
             }
 
             for (const key in schedules) {
