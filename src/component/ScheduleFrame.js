@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
 import Env from '../enviroments';
+import HorizontalRuler from './HorizontalRuler';
 
 class DescriptionHours extends Component {
     render() {
@@ -49,11 +50,8 @@ class ScheduleFrame extends Component {
 
             type: {
                 marginHorizontal: 16,
-                marginTop: 16,
+                marginVertical: 16,
                 fontSize: 20,
-                borderBottomWidth: 1,
-                borderColor: '#0000001e',
-                paddingBottom: 16,
                 fontWeight: 'bold'
             },
         });
@@ -67,6 +65,7 @@ class ScheduleFrame extends Component {
                 <Text style={styles.type}>
                     {type}
                 </Text>
+                <HorizontalRuler />
                 <View style={styles.box}>
                     <DescriptionHours description={start.description} hours={start.hours} />
                     {end ? <DescriptionHours description={end.description} hours={end.hours}/> : <></>}

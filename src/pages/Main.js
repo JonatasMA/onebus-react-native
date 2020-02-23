@@ -50,16 +50,19 @@ function Main({ navigation }) {
     );
 
     return (
-        <View>
-            <FlatList
-                data={routes}
-                renderItem={
-                    ({ item }) => (
-                        <LineText navigation={navigation} id={item.id} value={item.key} />
-                    )
-                }
-            />
-        </View>
+        <FlatList
+            data={routes}
+            renderItem={
+                ({ item }) => (
+                    <LineText
+                        navigation={navigation}
+                        id={item.id}
+                        value={item.key}
+                        fav={false}
+                    />
+                )
+            }
+        />
     );
 }
 
