@@ -1,11 +1,16 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, TouchableHighlight, View, Animated } from 'react-native';
-import { Swipeable, RectButton, TouchableOpacity } from 'react-native-gesture-handler';
-import DataBase from '../services/database';
+import { Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
+import { AsyncStorage } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+
+import DataBase from '../store/database';
 import Env from '../enviroments';
 import { MaterialIcons } from '@expo/vector-icons';
 
 function LineText() {
+    const mainRoutes = useSelector(state => state.mainRoutes, [fav]);
+    const dispatch = useDispatch();
     const [props] = useState(arguments[0]);
     const [hours, setHours] = useState("");
     const [minutes, setMinutes] = useState(0);
@@ -101,11 +106,15 @@ function LineText() {
         );
     };
 
+    async function saveFavOnAsyncStorage(fav) {
+        mainRoutes[props.id]["fav"] = fav;
+        dispatch({type: 'UPDATE_MAIN_ROUTES', mainRoutes});
+    }
+
     return (
         <Swipeable
-            close={()=>console.log('teste')}
             renderRightActions={(progress, dragX) => (
-                <RightActions progress={progress} dragX={dragX} onPress={() => { setFav(!fav);}}/>)}
+                <RightActions progress={progress} dragX={dragX} onPress={() => { setFav(!fav); saveFavOnAsyncStorage(!fav)}}/>)}
         >
             <TouchableHighlight
                 underlayColor='#ddd'
