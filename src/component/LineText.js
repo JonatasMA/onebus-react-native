@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, TouchableHighlight, View, Animated } from 'react-native';
-import { Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
-import { AsyncStorage } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import DataBase from '../store/database';
-import Env from '../enviroments';
-import { MaterialIcons } from '@expo/vector-icons';
 
 function LineText() {
-    const mainRoutes = useSelector(state => state.mainRoutes, [fav]);
-    const dispatch = useDispatch();
     const [props] = useState(arguments[0]);
     const [hours, setHours] = useState("");
-    const [minutes, setMinutes] = useState(0);
-    const [fav, setFav] = useState(props.fav);
+    const navigation = useSelector(state => state.navigation);
+    const minutes = useSelector(state => state.minutes);
 
     useEffect(() => {
         const getNextSchedule = (schedules) => {
@@ -49,10 +43,6 @@ function LineText() {
         setHours(
             getNextSchedule(schedules.start.hours) + (schedules.end ? ' / ' + getNextSchedule(schedules.end.hours) : '')
         );
-
-        const minutesInterval = setInterval(() => { setMinutes((new Date()).getMinutes()) }, 10000);
-
-        return () => { clearInterval(minutesInterval); }
     }, [minutes])
 
 
@@ -71,73 +61,28 @@ function LineText() {
         },
         box: {
             margin: 16,
-        },
-        rightAction: {
-            backgroundColor: Env.primary.light,
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-            height: 72,
-        },
-        actionText: {
-            color: '#fff',
-            fontWeight: '600',
-            fontSize: 16,
-            padding: 16
-        },
-        elevation: {
-            elevation: 1
         }
     });
 
-    const RightActions = ({ progress, dragX, onPress }) => {
-        const scale = dragX.interpolate({
-            inputRange: [-100, 0],
-            outputRange: [1, 0],
-            extrapolate: 'clamp',
-        });
-        return (
-            <TouchableOpacity onPress={onPress}>
-                <View style={styles.rightAction}>
-                    <Animated.Text style={[styles.actionText, { transform: [{ scale }] }]}>
-                        Favoritar
-                    </Animated.Text>
-                </View>
-            </TouchableOpacity>
-        );
-    };
-
-    async function saveFavOnAsyncStorage(fav) {
-        mainRoutes[props.id]["fav"] = fav;
-        dispatch({type: 'UPDATE_MAIN_ROUTES', mainRoutes});
-    }
-
     return (
-        <Swipeable
-            renderRightActions={(progress, dragX) => (
-                <RightActions progress={progress} dragX={dragX} onPress={() => { setFav(!fav); saveFavOnAsyncStorage(!fav)}}/>)}
-        >
-            <TouchableHighlight
-                underlayColor='#ddd'
-                style={styles.button}
-                onPress={
-                    () => {
-                        props.navigation.navigate('Schedule', { schedule: DataBase.lines[props.id] })
-                    }
+        <TouchableHighlight
+            underlayColor='#ddd'
+            style={styles.button}
+            onPress={
+                () => {
+                    navigation.navigate('Schedule', { schedule: DataBase.lines[props.id] })
                 }
-            >
-                <>
-                    <View style={styles.box}>
-                        <Text style={styles.line}>
-                            {props.value}
-                        </Text>
-                        <Text style={styles.hour}>
-                            {hours}
-                        </Text>
-                    </View>
-                    { fav ? <MaterialIcons style={{position: 'absolute', right: 16, top: 24, bottom: 24}} name="favorite" size={24} color={Env.primary.light} /> : null }
-                </>
-            </TouchableHighlight>
-        </Swipeable >
+            }
+        >
+            <View style={styles.box}>
+                <Text style={styles.line}>
+                    {props.value}
+                </Text>
+                <Text style={styles.hour}>
+                    {hours}
+                </Text>
+            </View>
+        </TouchableHighlight>
     );
 }
 

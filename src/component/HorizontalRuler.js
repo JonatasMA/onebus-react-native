@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Env from '../enviroments';
 
 function HorizontalRuler() {
     const styles = StyleSheet.create({

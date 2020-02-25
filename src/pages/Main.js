@@ -1,17 +1,30 @@
-import React, { useEffect, useState, useDebugValue } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextInput, FlatList } from 'react-native-gesture-handler';
 import { AsyncStorage } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import LineText from '../component/LineText';
 import DataBase from '../store/database';
 import Env from '../enviroments';
+import SwipeableFav from '../component/SwipeableFav';
 
 function Main({ navigation }) {
     const routes = useSelector(state => state.routes);
     const mainRoutes = useSelector(state => state.mainRoutes);
     const dispatch = useDispatch();
     const [lines] = useState(DataBase.lines);
+
+    dispatch({ type: 'SET_NAVIGATION', navigation });
+
+    function setMinutesInterval() {
+        const minutesInterval = setInterval(
+            () => {
+                dispatch( {type: 'SET_MINUTES', minutes: (new Date()).getMinutes() });
+                clearInterval(minutesInterval)
+                setMinutesInterval();
+            }, ( (60 - (new Date()).getSeconds()) * 1000)
+        );
+    }
+    setMinutesInterval();
 
     function parseToList() {
         return lines.map((line, index) => (
@@ -22,17 +35,11 @@ function Main({ navigation }) {
     async function checkAsyncStorage() {
         var routesStorage = await AsyncStorage.getItem('routes');
         if (!!routesStorage) {
-            dispatchRoutes(
-                JSON.parse(routesStorage)
-            );
+            dispatchRoutes(JSON.parse(routesStorage));
+        } else {
+            routesStorage = parseToList();
+            dispatchRoutes(routesStorage);
         }
-
-        routesStorage = parseToList();
-        await AsyncStorage.setItem('routes', JSON.stringify(routesStorage))
-
-        dispatchRoutes(
-            routesStorage
-        );
     }
 
     function dispatchRoutes(updatedRoutes) {
@@ -77,17 +84,15 @@ function Main({ navigation }) {
             )
         }
     );
-
     return (
         <FlatList
             data={routes}
             renderItem={
                 ({ item }) => (
-                    <LineText
-                        navigation={navigation}
+                    <SwipeableFav
                         id={item.id}
                         value={item.key}
-                        fav={item.fav}
+                        favorite={item.fav}
                     />
                 )
             }

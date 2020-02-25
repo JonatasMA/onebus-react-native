@@ -4,20 +4,27 @@ import { AsyncStorage } from 'react-native';
 const STATE = {
     routes: [],
     mainRoutes: [],
-    navigation: {}
+    navigation: {},
+    minutes: (new Date()).getMinutes()
 }
 
 function reducer(state = STATE, action) {
     switch (action.type) {
         case 'UPDATE_ROUTES':
             return { ...state, routes: action.routes }
+
         case 'UPDATE_MAIN_ROUTES':
-            const main = { ...state, mainRoutes: action.mainRoutes };
-            AsyncStorage.setItem('routes', JSON.stringify(main));
-            return main;
+            AsyncStorage.removeItem('routes');
+            AsyncStorage.setItem('routes', JSON.stringify(action.mainRoutes));
+            return { ...state, mainRoutes: action.mainRoutes };
+
         case 'SET_NAVIGATION':
             return { ...state, navigation: action.navigation }
-        default :
+
+        case 'SET_MINUTES':
+            return { ...state, minutes: action.minutes }
+
+        default:
             return state;
     }
 }

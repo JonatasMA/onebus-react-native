@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ToastAndroid, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import ScheduleFlatList from '../component/ScheduleFlatList'
@@ -31,14 +31,6 @@ function Schedule({ route, navigation }) {
                 )
             }
         );
-
-        // ToastAndroid.showWithGravityAndOffset(
-        //     'Clique no título para abrir as legendas.',
-        //     ToastAndroid.LONG,
-        //     ToastAndroid.BOTTOM,
-        //     0,
-        //     25,
-        // );
     }
 
     return (
